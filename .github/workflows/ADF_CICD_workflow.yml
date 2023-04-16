@@ -23,6 +23,3 @@ jobs:
         resourceGroupName: my-qa-rg
         dataFactoryName: p0c-qa-adf
         armTemplateFile: p0c-dev-adf/ARMTemplateForFactory.json
-      # armTemplateParametersFile: myArmTemplateParameters.json [optional]
-      # additionalParameters: 'key1=value key2=value keyN=value' [optional]
-      # skipAzModuleInstallation: true [optional]
