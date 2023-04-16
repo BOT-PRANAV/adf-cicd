@@ -18,8 +18,10 @@ jobs:
         enable-AzPSSession: true 
 
     - name: Deploy resources
-      uses: Azure/data-factory-deploy-action@v1.1.0
+      uses: Azure/data-factory-deploy-action@v1.2.0
       with:
         resourceGroupName: my-qa-rg
         dataFactoryName: p0c-qa-adf
         armTemplateFile: p0c-dev-adf/ARMTemplateForFactory.json
+        armTemplateParametersFile: false
+
