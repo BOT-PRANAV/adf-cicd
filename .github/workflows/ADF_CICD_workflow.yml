@@ -23,6 +23,6 @@ jobs:
         resourceGroupName: my-qa-rg
         dataFactoryName: p0c-qa-adf
         armTemplateFile: p0c-dev-adf/ARMTemplateForFactory.json
-        armTemplateParametersFile: false
-        additionalParameters: false
+        #armTemplateParametersFile: false
+        #additionalParameters: false
 
