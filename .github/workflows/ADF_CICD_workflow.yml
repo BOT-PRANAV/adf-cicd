@@ -11,19 +11,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-steps:
-  - name: Login via Az module
-    uses: azure/login@v1
-    with:
-      creds: ${{ secrets.AZURE_CREDENTIALS }}
-      enable-AzPSSession: true 
+    - name: Login via Az module
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        enable-AzPSSession: true 
 
-  - name: Deploy resources
-    uses: Azure/data-factory-deploy-action@v1.2.0
-    with:
-      resourceGroupName: my-qa-rg
-      dataFactoryName: p0c-qa-adf
-      armTemplateFile: p0c-dev-adf/ARMTemplateForFactory.json
+    - name: Deploy resources
+      uses: Azure/data-factory-deploy-action@v1.2.0
+      with:
+        resourceGroupName: my-qa-rg
+        dataFactoryName: p0c-qa-adf
+        armTemplateFile: p0c-dev-adf/ARMTemplateForFactory.json
       # armTemplateParametersFile: myArmTemplateParameters.json [optional]
       # additionalParameters: 'key1=value key2=value keyN=value' [optional]
       # skipAzModuleInstallation: true [optional]
