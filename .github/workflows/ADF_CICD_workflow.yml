@@ -24,4 +24,5 @@ jobs:
         dataFactoryName: p0c-qa-adf
         armTemplateFile: p0c-dev-adf/ARMTemplateForFactory.json
         armTemplateParametersFile: false
+        additionalParameters: false
 
