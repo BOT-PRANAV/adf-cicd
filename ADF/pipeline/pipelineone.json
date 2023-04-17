@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "pipelineone",
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait1",
+				"name": "Waitting",
 				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],
