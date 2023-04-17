@@ -4,6 +4,9 @@
 	"parameters": {
 		"factoryName": {
 			"value": "p0c-dev-adf"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://p0cdevadls.dfs.core.windows.net/"
 		}
 	}
 }
