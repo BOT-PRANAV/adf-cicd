@@ -34,8 +34,9 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"maxRowsPerFile": 50,
+							"fileNamePrefix": "",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false,
