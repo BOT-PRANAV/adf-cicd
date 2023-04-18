@@ -14,6 +14,9 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://abcdevkv.vault.azure.net/"
 		},
+		"default_properties_environment_value": {
+			"value": "dev"
+		},
 		"containerUri": {
 			"value": ""
 		},

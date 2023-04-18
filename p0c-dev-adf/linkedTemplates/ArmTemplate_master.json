@@ -20,6 +20,10 @@
 			"type": "string",
 			"defaultValue": "https://abcdevkv.vault.azure.net/"
 		},
+		"default_properties_environment_value": {
+			"type": "string",
+			"defaultValue": "dev"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -49,6 +53,9 @@
 					},
 					"Snowflake1_connectionString": {
 						"value": "[parameters('Snowflake1_connectionString')]"
+					},
+					"default_properties_environment_value": {
+						"value": "[parameters('default_properties_environment_value')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
