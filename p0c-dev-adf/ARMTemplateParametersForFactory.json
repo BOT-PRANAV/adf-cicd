@@ -7,6 +7,9 @@
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://p0cdevadls.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://abcdevkv.vault.azure.net/"
 		}
 	}
 }
