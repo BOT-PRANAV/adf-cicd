@@ -5,7 +5,8 @@
 		"type": "Snowflake",
 		"typeProperties": {
 			"authenticationType": "Basic",
-			"connectionString": {
+			"connectionString": "jdbc:snowflake://abc.dev.snowflake.snowflakecomputing.com/?user=devuser&db=devdb&warehouse=devwh&role=devde",
+			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
 					"referenceName": "AzureKeyVault1",
