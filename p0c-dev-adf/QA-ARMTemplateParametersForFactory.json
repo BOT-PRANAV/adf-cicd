@@ -3,16 +3,16 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"factoryName": {
-			"value": "p0c-dev-adf"
+			"value": "p0c-qa-adf"
 		},
 		"Snowflake1_connectionString": {
-			"value": "jdbc:snowflake://abc.dev.snowflake.snowflakecomputing.com/?user=devuser&db=devdb&warehouse=devwh&role=devde"
+			"value": "jdbc:snowflake://abc.qa.snowflake.snowflakecomputing.com/?user=qauser&db=qadb&warehouse=qawh&role=qade"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://p0cdevadls.dfs.core.windows.net/"
+			"value": "https://p0cqaadls.dfs.core.windows.net/"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"value": "https://abcdevkv.vault.azure.net/"
+			"value": "https://abcqakv.vault.azure.net/"
 		}
 	}
 }
