@@ -60,13 +60,23 @@
 					"referenceName": "AzureDataLakeStorage1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"container": {
+						"type": "string",
+						"defaultValue": "devc"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "dev-addresses.csv",
-						"fileSystem": "devc"
+						"fileName": "demo.csv",
+						"folderPath": "source",
+						"fileSystem": {
+							"value": "@dataset().container",
+							"type": "Expression"
+						}
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -163,7 +173,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "simple copy",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -225,7 +235,12 @@
 							{
 								"referenceName": "DelimitedText1",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"container": {
+										"value": "@pipeline().parameters.container_name",
+										"type": "Expression"
+									}
+								}
 							}
 						],
 						"outputs": [
@@ -240,6 +255,12 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"parameters": {
+					"container_name": {
+						"type": "string",
+						"defaultValue": "devc"
+					}
 				},
 				"annotations": []
 			},
