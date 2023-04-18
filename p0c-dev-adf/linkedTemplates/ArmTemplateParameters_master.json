@@ -11,6 +11,9 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://abcdevkv.vault.azure.net/"
 		},
+		"Snowflake1_properties_typeProperties_connectionString_secretName": {
+			"value": "dev-key"
+		},
 		"containerUri": {
 			"value": ""
 		},
