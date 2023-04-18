@@ -7,6 +7,11 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "p0c-dev-adf"
 		},
+		"Snowflake1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'",
+			"defaultValue": "jdbc:snowflake://abc.dev.snowflake.snowflakecomputing.com/?user=devuser&db=devdb&warehouse=devwh&role=devde"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://p0cdevadls.dfs.core.windows.net/"
@@ -14,10 +19,6 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://abcdevkv.vault.azure.net/"
-		},
-		"Snowflake1_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "dev-key"
 		}
 	},
 	"variables": {
@@ -140,13 +141,14 @@
 				"type": "Snowflake",
 				"typeProperties": {
 					"authenticationType": "Basic",
-					"connectionString": {
+					"connectionString": "[parameters('Snowflake1_connectionString')]",
+					"password": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
 							"referenceName": "AzureKeyVault1",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "[parameters('Snowflake1_properties_typeProperties_connectionString_secretName')]"
+						"secretName": "dev-key"
 					}
 				}
 			},

@@ -5,14 +5,14 @@
 		"factoryName": {
 			"value": "p0c-dev-adf"
 		},
+		"Snowflake1_connectionString": {
+			"value": "jdbc:snowflake://abc.dev.snowflake.snowflakecomputing.com/?user=devuser&db=devdb&warehouse=devwh&role=devde"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://p0cdevadls.dfs.core.windows.net/"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://abcdevkv.vault.azure.net/"
-		},
-		"Snowflake1_properties_typeProperties_connectionString_secretName": {
-			"value": "dev-key"
 		},
 		"containerUri": {
 			"value": ""
