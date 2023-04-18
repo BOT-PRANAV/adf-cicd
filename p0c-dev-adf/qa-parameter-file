@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "p0c-dev-adf"
+		},
+		"Snowflake1_connectionString": {
+			"value": "jdbc:snowflake://abc.dev.snowflake.snowflakecomputing.com/?user=devuser&db=devdb&warehouse=devwh&role=devde"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://p0cdevadls.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://abcdevkv.vault.azure.net/"
+		}
+	}
+}
