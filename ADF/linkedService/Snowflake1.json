@@ -1,6 +1,11 @@
 {
 	"name": "Snowflake1",
 	"properties": {
+		"parameters": {
+			"key_name": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Snowflake",
 		"typeProperties": {
@@ -12,7 +17,10 @@
 					"referenceName": "AzureKeyVault1",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "dev-key"
+				"secretName": {
+					"value": "@linkedService().key_name",
+					"type": "Expression"
+				}
 			}
 		}
 	}
