@@ -2,5 +2,9 @@
 	"environment": {
 		"type": "string",
 		"value": "dev"
+	},
+	"container_name": {
+		"type": "string",
+		"value": "devc"
 	}
 }

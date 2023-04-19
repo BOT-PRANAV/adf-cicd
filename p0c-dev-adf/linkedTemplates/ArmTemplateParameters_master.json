@@ -17,6 +17,9 @@
 		"default_properties_environment_value": {
 			"value": "dev"
 		},
+		"default_properties_container_name_value": {
+			"value": "devc"
+		},
 		"containerUri": {
 			"value": ""
 		},
