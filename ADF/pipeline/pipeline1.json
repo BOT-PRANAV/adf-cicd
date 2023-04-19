@@ -58,7 +58,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": {
-								"value": "@pipeline().parameters.container_name",
+								"value": "@pipeline().globalParameters.container_name",
 								"type": "Expression"
 							}
 						}
@@ -67,7 +67,13 @@
 				"outputs": [
 					{
 						"referenceName": "DelimitedText2",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container_name": {
+								"value": "@pipeline().globalParameters.container_name",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
