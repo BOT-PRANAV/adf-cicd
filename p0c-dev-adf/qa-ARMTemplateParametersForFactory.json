@@ -13,6 +13,12 @@
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://abcqakv.vault.azure.net/"
+		},
+		"default_properties_environment_value": {
+			"value": "qa"
+		},
+		"default_properties_container_name_value": {
+			"value": "qac"
 		}
 	}
 }
