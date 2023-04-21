@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - adf_publish
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: 'This deploys to QA'
+    steps:
+    - uses: actions/checkout@v3
+
+    #- name: Login via Az module
+    #  uses: azure/login@v1
+    #  with:
+    #    creds: ${{ secrets.AZURE_CREDENTIALS }}
+    #    enable-AzPSSession: true 
+     
+     - name: Azure Login
+        if: always() 
+          uses: Azure/login@v1
+          with:
+            creds: ${{ secrets.TF_ARM_CREDENTIALS}}
+            enable-AzPSSession: true
+
+    - name: Deploy resources
+      uses: Azure/data-factory-deploy-action@v1.2.0
+      with:
+        resourceGroupName: my-qa-rg
+        dataFactoryName: p0c-qa-adf
+        armTemplateFile: p0c-dev-adf/ARMTemplateForFactory.json
+        armTemplateParametersFile: p0c-dev-adf/qa-ARMTemplateParametersForFactory.json
+        #additionalParameters: false
+
