@@ -1,23 +1,23 @@
-'on':
+on:
   push:
     branches:
       - adf_publish
   workflow_dispatch:
-    jobs: null
+
+jobs:
     build:
       runs-on: ubuntu-latest
       name: login check
       steps:
         - uses: actions/checkout@v3
         - name: concat-json
-      id: concat-json
-      run: >
-        Azure_Credentials='{"clientId":"'${{ secrets.TF_ARM_CLIENT_ID
-        }}'","clientSecret":"'${{
-        secrets.TF_ARM_CLIENT_SECRET}}'","subscriptionId":"'${{
-        secrets.TF_ARM_SUBSCRIPTION_ID}}'","tenantId":"'${{
-        secrets.TF_ARM_TENANT_ID}}'","activeDirectoryEndpointUrl":"https://login.microsoftonline.com","resourceManagerEndpointUrl":"https://management.azure.com/","activeDirectoryGraphResourceId":"https://graph.windows.net/","sqlManagementEndpointUrl":"https://management.core.windows.net:8443/","galleryEndpointUrl":"https://gallery.azure.com/","managementEndpointUrl":"https://management.core.windows.net/"}'
-        echo "::set-output name=Azure_Credentials::$Azure_Credentials"
-
-        - name: Azure Login if: always() uses: azure/login@v1 with: creds: ${{
-        steps.concat-json.outputs.Azure_Credentials }}
+          id: concat-json
+          run: >
+            Azure_Credentials='{"clientId":"'${{ secrets.TF_ARM_CLIENT_ID}}'","clientSecret":"'${{secrets.TF_ARM_CLIENT_SECRET}}'","subscriptionId":"'${{secrets.TF_ARM_SUBSCRIPTION_ID}}'","tenantId":"'${{secrets.TF_ARM_TENANT_ID}}'","activeDirectoryEndpointUrl":"https://login.microsoftonline.com","resourceManagerEndpointUrl":"https://management.azure.com/","activeDirectoryGraphResourceId":"https://graph.windows.net/","sqlManagementEndpointUrl":"https://management.core.windows.net:8443/","galleryEndpointUrl":"https://gallery.azure.com/","managementEndpointUrl":"https://management.core.windows.net/"}'
+            echo "::set-output name=Azure_Credentials::$Azure_Credentials"
+            
+            - name: Azure Login 
+            if: always() 
+            uses: azure/login@v1 
+            with:
+            creds: ${{steps.concat-json.outputs.Azure_Credentials }}
