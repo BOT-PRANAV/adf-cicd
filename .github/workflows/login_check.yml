@@ -21,6 +21,7 @@ jobs:
           uses: Azure/login@v1
           with:
             creds: '{"clientId":"${{ secrets.TF_ARM_AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.TF_ARM_AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TF_ARM_AZURE_TENANT_ID }}"}'
+            enable-AzPSSession: true
             
             #'creds', '', '', ''
             #creds: ${{secrets.TF_ARM_CLIENT_ID},{secrets.TF_ARM_CLIENT_SECRET},{secrets.TF_ARM_SUBSCRIPTION_ID},{secrets.TF_ARM_TENANT_ID}}
