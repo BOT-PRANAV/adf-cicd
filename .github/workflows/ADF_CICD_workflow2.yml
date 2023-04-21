@@ -1,7 +1,5 @@
 # This yml file allows you to use the azure CLI to run various commands against your subscription.
 
- 
-
 name: "Azure CLI"
 
  
@@ -16,8 +14,6 @@ on:
 
 
 jobs:
-
- 
 
   # Determine which environment variables should be used based on the branch this is running on. 
   github-environment:
@@ -54,9 +50,6 @@ jobs:
  
 
     steps:
-
- 
-
         # create Azure Credentials for login using github environment secrets
       - name: concat-json
         id: concat-json
@@ -68,8 +61,8 @@ jobs:
         if: always() 
         uses: azure/login@v1
         with:
-          creds: ${{ steps.concat-json.outputs.Azure_Credentials }}
-
+          creds: ${{ secrets.TF_ARM_CREDENTIALS}}
+          #enable-AzPSSession: true
  
 
         # use the azure CLI to list the accounts the service principle has access to
