@@ -1,8 +1,8 @@
-on:
-  push:
-    branches:
-      #- adf_publish
-  workflow_dispatch:
+#on:
+  #push:
+    #branches:
+      - adf_publish
+  #workflow_dispatch:
 
 jobs:
   build:
