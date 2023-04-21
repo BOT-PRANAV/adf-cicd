@@ -14,10 +14,12 @@ jobs:
           if: always() 
           uses: azure/login@v1 
           with:
-            "clientId": ${{ secrets.TF_ARM_AZURE_CLIENT_ID }}
-            "clientSecret": ${{ secrets.TF_ARM_CLIENT_SECRET }}
-            "subscriptionId": ${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}
-            "tenantId": ${{ secrets.TF_ARM_AZURE_TENANT_ID }}
+            client-id : ${{ secrets.TF_ARM_AZURE_CLIENT_ID }}
+            tenant-id: ${{ secrets.TF_ARM_CLIENT_SECRET }}
+            subscription-id: ${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}
+            tenantId: ${{ secrets.TF_ARM_AZURE_TENANT_ID }}
+            
+            #'creds', '', '', ''
             #creds: ${{secrets.TF_ARM_CLIENT_ID},{secrets.TF_ARM_CLIENT_SECRET},{secrets.TF_ARM_SUBSCRIPTION_ID},{secrets.TF_ARM_TENANT_ID}}
         #- name: concat-json
          # id: concat-json
