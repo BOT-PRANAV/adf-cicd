@@ -1,0 +1,79 @@
+# This yml file allows you to use the azure CLI to run various commands against your subscription.
+
+ 
+
+name: "Azure CLI"
+
+ 
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - development
+      - adf_publish
+
+
+jobs:
+
+ 
+
+  # Determine which environment variables should be used based on the branch this is running on. 
+  github-environment:
+    outputs:
+      env-name: ${{ steps.set_env.outputs.environment }}
+    runs-on: ubuntu-latest  
+
+ 
+
+    # Set the environment variable based on which branch this yml is running on. 
+    steps:
+      - name: Set Env
+        id: set_env
+        run: |
+          check_prd="${{ github.event.pull_request.base.ref == 'main' || github.ref == 'refs/heads/main' }}"
+          if [ "$check_prd" = true ]; then
+            echo "environment=prd" >> $GITHUB_OUTPUT
+          fi
+          check_stg="${{ github.event.pull_request.base.ref == 'staging' || github.ref == 'refs/heads/staging' }}"
+          if [ "$check_stg" = true ]; then
+            echo "environment=stg" >> $GITHUB_OUTPUT
+          fi
+          check_dev="${{ endswith(github.ref,'development') }}"
+          if [ "$check_dev" = true ]; then
+            echo "environment=dev" >> $GITHUB_OUTPUT
+          fi
+  AzureCLI:
+
+    name: azurecli
+    runs-on: ubuntu-latest
+    environment: ${{ needs.github-environment.outputs.env-name }}
+    needs: github-environment
+
+ 
+
+    steps:
+
+ 
+
+        # create Azure Credentials for login using github environment secrets
+      - name: concat-json
+        id: concat-json
+        run: |
+          Azure_Credentials='{"clientId":"'${{ secrets.TF_ARM_CLIENT_ID }}'","clientSecret":"'${{ secrets.TF_ARM_CLIENT_SECRET}}'","subscriptionId":"'${{ secrets.TF_ARM_SUBSCRIPTION_ID}}'","tenantId":"'${{ secrets.TF_ARM_TENANT_ID}}'","activeDirectoryEndpointUrl":"https://login.microsoftonline.com","resourceManagerEndpointUrl":"https://management.azure.com/","activeDirectoryGraphResourceId":"https://graph.windows.net/","sqlManagementEndpointUrl":"https://management.core.windows.net:8443/","galleryEndpointUrl":"https://gallery.azure.com/","managementEndpointUrl":"https://management.core.windows.net/"}'
+          echo "::set-output name=Azure_Credentials::$Azure_Credentials"
+        # login using the created credentials
+      - name: Azure Login
+        if: always() 
+        uses: azure/login@v1
+        with:
+          creds: ${{ steps.concat-json.outputs.Azure_Credentials }}
+
+ 
+
+        # use the azure CLI to list the accounts the service principle has access to
+      - name: list Accounts
+        run: |
+          az account list
+          az account show
