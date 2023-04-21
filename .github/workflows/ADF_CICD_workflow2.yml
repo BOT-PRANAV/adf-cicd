@@ -4,13 +4,13 @@ name: "Azure CLI"
 
  
 
-on:
-  push:
-    branches:
-      - main
-      - staging
-      - development
-      - adf_publish
+#on:
+  #push:
+    #branches:
+    #  - main
+   #   - staging
+  #    - development
+ #     - adf_publish
 
 
 jobs:
