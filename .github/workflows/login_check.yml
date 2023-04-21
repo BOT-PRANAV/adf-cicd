@@ -11,19 +11,21 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - name: Azure Login 
-          #if: always() 
+          if: always() 
+
+          uses: Azure/login@v1
+          with:
+            creds: ${{ secrets.TF_ARM_CREDENTIALS}}
+           
+            enable-AzPSSession: true
+            
+            #creds: '{"clientId":"${{ secrets.TF_ARM_AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.TF_ARM_AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TF_ARM_AZURE_TENANT_ID }}","activeDirectoryEndpointUrl":"https://login.microsoftonline.com","resourceManagerEndpointUrl":"https://management.azure.com/","activeDirectoryGraphResourceId":"https://graph.windows.net/","sqlManagementEndpointUrl":"https://management.core.windows.net:8443/","galleryEndpointUrl":"https://gallery.azure.com/","managementEndpointUrl":"https://management.core.windows.net/"}' 
           #uses: azure/login@v1 
           #with:
            # client-id : ${{ secrets.TF_ARM_AZURE_CLIENT_ID }}
             #clientSecret: ${{ secrets.TF_ARM_CLIENT_SECRET }}
            # subscription-id: ${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}
             #tenant-id: ${{ secrets.TF_ARM_AZURE_TENANT_ID }}
-          uses: Azure/login@v1
-          with:
-            creds: ${{ secrets.TF_ARM_CREDENTIALS}}
-            #creds: '{"clientId":"${{ secrets.TF_ARM_AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.TF_ARM_AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TF_ARM_AZURE_TENANT_ID }}","activeDirectoryEndpointUrl":"https://login.microsoftonline.com","resourceManagerEndpointUrl":"https://management.azure.com/","activeDirectoryGraphResourceId":"https://graph.windows.net/","sqlManagementEndpointUrl":"https://management.core.windows.net:8443/","galleryEndpointUrl":"https://gallery.azure.com/","managementEndpointUrl":"https://management.core.windows.net/"}'
-            enable-AzPSSession: true
-            
             #'creds', '', '', ''
             #creds: ${{secrets.TF_ARM_CLIENT_ID},{secrets.TF_ARM_CLIENT_SECRET},{secrets.TF_ARM_SUBSCRIPTION_ID},{secrets.TF_ARM_TENANT_ID}}
         #- name: concat-json
