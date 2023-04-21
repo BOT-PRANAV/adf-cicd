@@ -20,7 +20,7 @@ jobs:
             #tenant-id: ${{ secrets.TF_ARM_AZURE_TENANT_ID }}
           uses: Azure/login@v1
           with:
-            creds: '{"clientId":"${{ secrets.TF_ARM_AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.TF_ARM_AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TF_ARM_AZURE_TENANT_ID }}"}'
+            creds: '{"clientId":"${{ secrets.TF_ARM_AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.TF_ARM_AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TF_ARM_AZURE_TENANT_ID }}","activeDirectoryEndpointUrl":"https://login.microsoftonline.com","resourceManagerEndpointUrl":"https://management.azure.com/","activeDirectoryGraphResourceId":"https://graph.windows.net/","sqlManagementEndpointUrl":"https://management.core.windows.net:8443/","galleryEndpointUrl":"https://gallery.azure.com/","managementEndpointUrl":"https://management.core.windows.net/"}'
             enable-AzPSSession: true
             
             #'creds', '', '', ''
