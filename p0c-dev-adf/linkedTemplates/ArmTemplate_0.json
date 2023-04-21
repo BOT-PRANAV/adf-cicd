@@ -303,7 +303,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "simple copy",
+						"name": "simple copy activity",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
