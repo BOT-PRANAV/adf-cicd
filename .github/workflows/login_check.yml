@@ -15,7 +15,7 @@ jobs:
           uses: azure/login@v1 
           with:
             client-id : ${{ secrets.TF_ARM_AZURE_CLIENT_ID }}
-            clientSecret: ${{ secrets.TF_ARM_CLIENT_SECRET }}
+            #clientSecret: ${{ secrets.TF_ARM_CLIENT_SECRET }}
             subscription-id: ${{ secrets.TF_ARM_AZURE_SUBSCRIPTION_ID }}
             tenant-id: ${{ secrets.TF_ARM_AZURE_TENANT_ID }}
             
