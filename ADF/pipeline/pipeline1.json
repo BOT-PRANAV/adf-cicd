@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "simple copy activity",
+				"name": "adls to sf",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
