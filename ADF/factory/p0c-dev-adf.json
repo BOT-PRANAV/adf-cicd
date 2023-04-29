@@ -21,6 +21,10 @@
 			"sf_role": {
 				"type": "string",
 				"value": "DevDEngg"
+			},
+			"sf_warehouse": {
+				"type": "string",
+				"value": "dev_wh"
 			}
 		}
 	},
