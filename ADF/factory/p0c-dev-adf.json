@@ -9,6 +9,10 @@
 			"container_name": {
 				"type": "string",
 				"value": "devc"
+			},
+			"sf_database": {
+				"type": "string",
+				"value": "DevDB"
 			}
 		}
 	},
