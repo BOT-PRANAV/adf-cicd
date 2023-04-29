@@ -35,11 +35,8 @@
 					"enableStaging": true,
 					"stagingSettings": {
 						"linkedServiceName": {
-							"referenceName": "AzureDataLakeStorage1",
-							"type": "LinkedServiceReference",
-							"parameters": {
-								"storage_account_url": "https://p0cdevadls.dfs.core.windows.net/"
-							}
+							"referenceName": "linkedService1",
+							"type": "LinkedServiceReference"
 						},
 						"path": "devc"
 					},
