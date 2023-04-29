@@ -2,7 +2,19 @@
 	"name": "Snowflake1",
 	"properties": {
 		"parameters": {
-			"key_name": {
+			"account": {
+				"type": "string"
+			},
+			"username": {
+				"type": "string"
+			},
+			"database": {
+				"type": "string"
+			},
+			"role": {
+				"type": "string"
+			},
+			"warehouse": {
 				"type": "string"
 			}
 		},
@@ -10,17 +22,14 @@
 		"type": "Snowflake",
 		"typeProperties": {
 			"authenticationType": "Basic",
-			"connectionString": "jdbc:snowflake://abc.dev.snowflake.snowflakecomputing.com/?user=devuser&db=devdb&warehouse=devwh&role=devde",
+			"connectionString": "jdbc:snowflake://@{linkedService().account}.snowflakecomputing.com/?user=@{linkedService().username}&db=@{linkedService().database}&warehouse=@{linkedService().warehouse}&role=@{linkedService().role}",
 			"password": {
 				"type": "AzureKeyVaultSecret",
 				"store": {
 					"referenceName": "AzureKeyVault1",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": {
-					"value": "@linkedService().key_name",
-					"type": "Expression"
-				}
+				"secretName": "dev-slsf"
 			}
 		}
 	}
