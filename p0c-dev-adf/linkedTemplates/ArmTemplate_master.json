@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "p0c-dev-adf"
 		},
-		"Salesforce1_securityToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'securityToken' of 'Salesforce1'"
-		},
 		"Snowflake1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Snowflake1'",
@@ -23,14 +19,6 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "@{linkedService().kv_url}"
-		},
-		"Salesforce1_properties_typeProperties_environmentUrl": {
-			"type": "string",
-			"defaultValue": "https://login.salesforce.com"
-		},
-		"Salesforce1_properties_typeProperties_username": {
-			"type": "string",
-			"defaultValue": "testdecv"
 		},
 		"linkedService1_sasUri": {
 			"type": "secureString",
@@ -63,9 +51,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"Salesforce1_securityToken": {
-						"value": "[parameters('Salesforce1_securityToken')]"
-					},
 					"Snowflake1_connectionString": {
 						"value": "[parameters('Snowflake1_connectionString')]"
 					},
@@ -77,12 +62,6 @@
 					},
 					"linkedService1_sasUri": {
 						"value": "[parameters('linkedService1_sasUri')]"
-					},
-					"Salesforce1_properties_typeProperties_environmentUrl": {
-						"value": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]"
-					},
-					"Salesforce1_properties_typeProperties_username": {
-						"value": "[parameters('Salesforce1_properties_typeProperties_username')]"
 					}
 				}
 			},
