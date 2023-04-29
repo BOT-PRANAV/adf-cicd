@@ -25,6 +25,10 @@
 			"sf_warehouse": {
 				"type": "string",
 				"value": "dev_wh"
+			},
+			"storage_accont": {
+				"type": "string",
+				"value": "devdls"
 			}
 		}
 	},
