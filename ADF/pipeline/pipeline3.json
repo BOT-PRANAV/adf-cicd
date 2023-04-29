@@ -27,30 +27,13 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings",
-							"copyBehavior": "PreserveHierarchy"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"maxRowsPerFile": 100,
-							"fileNamePrefix": "",
-							"quoteAllText": true,
-							"fileExtension": ".csv"
+						"type": "SnowflakeSink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
 						}
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false,
-					"dataIntegrationUnits": 2,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
+					"dataIntegrationUnits": 2
 				},
 				"inputs": [
 					{
@@ -58,7 +41,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": {
-								"value": "@pipeline().globalParameters.container_name",
+								"value": "@pipeline().globalParameters.adls_container",
 								"type": "Expression"
 							}
 						}
@@ -66,24 +49,12 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
-						"type": "DatasetReference",
-						"parameters": {
-							"container_name": {
-								"value": "@pipeline().globalParameters.container_name",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "SnowflakeTable1",
+						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"parameters": {
-			"container_name": {
-				"type": "string",
-				"defaultValue": "devc"
-			}
-		},
 		"annotations": []
 	}
 }

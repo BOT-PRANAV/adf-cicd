@@ -3,12 +3,21 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_url": {
+					"value": "@dataset().storage_account_url",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"container": {
 				"type": "string",
 				"defaultValue": "devc"
+			},
+			"storage_account_url": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
