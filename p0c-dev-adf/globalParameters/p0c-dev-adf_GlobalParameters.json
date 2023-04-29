@@ -3,8 +3,36 @@
 		"type": "string",
 		"value": "dev"
 	},
-	"container_name": {
+	"adls_container": {
 		"type": "string",
 		"value": "devc"
+	},
+	"sf_database": {
+		"type": "string",
+		"value": "DevDB"
+	},
+	"sf_username": {
+		"type": "string",
+		"value": "devuser"
+	},
+	"sf_role": {
+		"type": "string",
+		"value": "DevDEngg"
+	},
+	"sf_warehouse": {
+		"type": "string",
+		"value": "dev_wh"
+	},
+	"storage_accont": {
+		"type": "string",
+		"value": "devdls"
+	},
+	"sf_account": {
+		"type": "string",
+		"value": "devaccount"
+	},
+	"kv_url": {
+		"type": "string",
+		"value": "devkv"
 	}
 }

@@ -5,20 +5,53 @@
 		"factoryName": {
 			"value": "p0c-dev-adf"
 		},
+		"Salesforce1_securityToken": {
+			"value": ""
+		},
 		"Snowflake1_connectionString": {
-			"value": "jdbc:snowflake://abc.dev.snowflake.snowflakecomputing.com/?user=devuser&db=devdb&warehouse=devwh&role=devde"
+			"value": "jdbc:snowflake://@{linkedService().account}.snowflakecomputing.com/?user=@{linkedService().username}&db=@{linkedService().database}&warehouse=@{linkedService().warehouse}&role=@{linkedService().role}"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://p0cdevadls.dfs.core.windows.net/"
+			"value": "@{linkedService().storage_account_url}"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"value": "https://abcdevkv.vault.azure.net/"
+			"value": "@{linkedService().kv_url}"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"value": "https://login.salesforce.com"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"value": "testdecv"
+		},
+		"linkedService1_sasUri": {
+			"value": ""
 		},
 		"default_properties_environment_value": {
 			"value": "dev"
 		},
-		"default_properties_container_name_value": {
+		"default_properties_adls_container_value": {
 			"value": "devc"
+		},
+		"default_properties_sf_database_value": {
+			"value": "DevDB"
+		},
+		"default_properties_sf_username_value": {
+			"value": "devuser"
+		},
+		"default_properties_sf_role_value": {
+			"value": "DevDEngg"
+		},
+		"default_properties_sf_warehouse_value": {
+			"value": "dev_wh"
+		},
+		"default_properties_storage_accont_value": {
+			"value": "devdls"
+		},
+		"default_properties_sf_account_value": {
+			"value": "devaccount"
+		},
+		"default_properties_kv_url_value": {
+			"value": "devkv"
 		},
 		"containerUri": {
 			"value": ""
