@@ -17,6 +17,10 @@
 			"sf_username": {
 				"type": "string",
 				"value": "devuser"
+			},
+			"sf_role": {
+				"type": "string",
+				"value": "DevDEngg"
 			}
 		}
 	},
