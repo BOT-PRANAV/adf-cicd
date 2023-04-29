@@ -6,7 +6,7 @@
 				"type": "string",
 				"value": "dev"
 			},
-			"container_name": {
+			"adls_container": {
 				"type": "string",
 				"value": "devc"
 			},
