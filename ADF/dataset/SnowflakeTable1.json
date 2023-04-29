@@ -24,6 +24,10 @@
 				"warehouse": {
 					"value": "@dataset().warehouse",
 					"type": "Expression"
+				},
+				"kv_url": {
+					"value": "@dataset().kv_url",
+					"type": "Expression"
 				}
 			}
 		},
@@ -47,6 +51,9 @@
 				"type": "string"
 			},
 			"schema": {
+				"type": "string"
+			},
+			"kv_url": {
 				"type": "string"
 			}
 		},
