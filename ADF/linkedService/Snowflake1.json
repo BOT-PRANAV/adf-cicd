@@ -16,6 +16,9 @@
 			},
 			"warehouse": {
 				"type": "string"
+			},
+			"kv_url": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
