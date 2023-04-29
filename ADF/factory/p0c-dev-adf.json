@@ -13,6 +13,10 @@
 			"sf_database": {
 				"type": "string",
 				"value": "DevDB"
+			},
+			"sf_username": {
+				"type": "string",
+				"value": "devuser"
 			}
 		}
 	},
