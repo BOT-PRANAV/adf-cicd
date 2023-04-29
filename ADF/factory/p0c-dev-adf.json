@@ -33,6 +33,10 @@
 			"sf_account": {
 				"type": "string",
 				"value": "devaccount"
+			},
+			"kv_url": {
+				"type": "string",
+				"value": "devkv"
 			}
 		}
 	},
