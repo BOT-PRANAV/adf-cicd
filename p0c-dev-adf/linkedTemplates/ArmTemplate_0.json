@@ -16,42 +16,6 @@
 			"metadata": "Secure string for 'connectionString' of 'Snowflake1'",
 			"defaultValue": "jdbc:snowflake://@{linkedService().account}.snowflakecomputing.com/?user=@{linkedService().username}&db=@{linkedService().database}&warehouse=@{linkedService().warehouse}&role=@{linkedService().role}"
 		},
-		"default_properties_environment_value": {
-			"type": "string",
-			"defaultValue": "dev"
-		},
-		"default_properties_adls_container_value": {
-			"type": "string",
-			"defaultValue": "devc"
-		},
-		"default_properties_sf_database_value": {
-			"type": "string",
-			"defaultValue": "DevDB"
-		},
-		"default_properties_sf_username_value": {
-			"type": "string",
-			"defaultValue": "devuser"
-		},
-		"default_properties_sf_role_value": {
-			"type": "string",
-			"defaultValue": "DevDEngg"
-		},
-		"default_properties_sf_warehouse_value": {
-			"type": "string",
-			"defaultValue": "dev_wh"
-		},
-		"default_properties_storage_accont_value": {
-			"type": "string",
-			"defaultValue": "devdls"
-		},
-		"default_properties_sf_account_value": {
-			"type": "string",
-			"defaultValue": "devaccount"
-		},
-		"default_properties_kv_url_value": {
-			"type": "string",
-			"defaultValue": "devkv"
-		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().storage_account_url}"
@@ -77,50 +41,6 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/default')]",
-			"type": "Microsoft.DataFactory/factories/globalparameters",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"environment": {
-					"type": "string",
-					"value": "[parameters('default_properties_environment_value')]"
-				},
-				"adls_container": {
-					"type": "string",
-					"value": "[parameters('default_properties_adls_container_value')]"
-				},
-				"sf_database": {
-					"type": "string",
-					"value": "[parameters('default_properties_sf_database_value')]"
-				},
-				"sf_username": {
-					"type": "string",
-					"value": "[parameters('default_properties_sf_username_value')]"
-				},
-				"sf_role": {
-					"type": "string",
-					"value": "[parameters('default_properties_sf_role_value')]"
-				},
-				"sf_warehouse": {
-					"type": "string",
-					"value": "[parameters('default_properties_sf_warehouse_value')]"
-				},
-				"storage_accont": {
-					"type": "string",
-					"value": "[parameters('default_properties_storage_accont_value')]"
-				},
-				"sf_account": {
-					"type": "string",
-					"value": "[parameters('default_properties_sf_account_value')]"
-				},
-				"kv_url": {
-					"type": "string",
-					"value": "[parameters('default_properties_kv_url_value')]"
-				}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
