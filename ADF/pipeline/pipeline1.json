@@ -90,6 +90,10 @@
 							"schema": {
 								"value": "@pipeline().parameters.schema",
 								"type": "Expression"
+							},
+							"kv_url": {
+								"value": "@pipeline().globalParameters.kv_url",
+								"type": "Expression"
 							}
 						}
 					}
