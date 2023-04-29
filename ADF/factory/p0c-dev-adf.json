@@ -29,6 +29,10 @@
 			"storage_accont": {
 				"type": "string",
 				"value": "devdls"
+			},
+			"sf_account": {
+				"type": "string",
+				"value": "devaccount"
 			}
 		}
 	},
