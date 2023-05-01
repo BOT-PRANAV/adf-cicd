@@ -23,6 +23,18 @@
 		"linkedService1_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'linkedService1'"
+		},
+		"trigger1_properties_pl_cpy_parameters_table": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"trigger1_properties_pl_cpy_parameters_schema": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/c3aa1248-d722-4c3e-8f3b-a43bff90ed62/resourceGroups/my-dev-rg/providers/Microsoft.Storage/storageAccounts/p0cdevadls"
 		}
 	},
 	"variables": {
@@ -522,6 +534,39 @@
 				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
 				"[concat(variables('factoryId'), '/datasets/SnowflakeTable1')]",
 				"[concat(variables('factoryId'), '/linkedServices/linkedService1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_cpy",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"table": "[parameters('trigger1_properties_pl_cpy_parameters_table')]",
+							"schema": "[parameters('trigger1_properties_pl_cpy_parameters_schema')]"
+						}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/devc/blobs/",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_cpy')]"
 			]
 		}
 	]
