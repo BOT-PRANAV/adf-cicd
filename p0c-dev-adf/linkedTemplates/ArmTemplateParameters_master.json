@@ -17,12 +17,6 @@
 		"linkedService1_sasUri": {
 			"value": ""
 		},
-		"trigger1_properties_pl_cpy_parameters_table": {
-			"value": "test"
-		},
-		"trigger1_properties_pl_cpy_parameters_schema": {
-			"value": "test"
-		},
 		"trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/c3aa1248-d722-4c3e-8f3b-a43bff90ed62/resourceGroups/my-dev-rg/providers/Microsoft.Storage/storageAccounts/p0cdevadls"
 		},
