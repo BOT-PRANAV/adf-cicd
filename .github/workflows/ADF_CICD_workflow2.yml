@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: 'This deploys to QA'
+    name: 'This deploys to QA from ADF_publish'
     steps:
     - uses: actions/checkout@v3
 
