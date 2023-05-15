@@ -24,18 +24,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'linkedService1'"
 		},
-		"trigger1_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/c3aa1248-d722-4c3e-8f3b-a43bff90ed62/resourceGroups/my-dev-rg/providers/Microsoft.Storage/storageAccounts/p0cdevadls"
-		},
-		"trigger2_properties_pl_cpy_parameters_table": {
-			"type": "string",
-			"defaultValue": "test"
-		},
-		"trigger2_properties_pl_cpy_parameters_schema": {
-			"type": "string",
-			"defaultValue": "test"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -74,15 +62,6 @@
 					},
 					"linkedService1_sasUri": {
 						"value": "[parameters('linkedService1_sasUri')]"
-					},
-					"trigger1_properties_typeProperties_scope": {
-						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
-					},
-					"trigger2_properties_pl_cpy_parameters_table": {
-						"value": "[parameters('trigger2_properties_pl_cpy_parameters_table')]"
-					},
-					"trigger2_properties_pl_cpy_parameters_schema": {
-						"value": "[parameters('trigger2_properties_pl_cpy_parameters_schema')]"
 					}
 				}
 			},
