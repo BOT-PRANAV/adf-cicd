@@ -18,10 +18,6 @@
 				"type": "string",
 				"value": "devuser"
 			},
-			"sf_role": {
-				"type": "string",
-				"value": "DevDEngg"
-			},
 			"sf_warehouse": {
 				"type": "string",
 				"value": "dev_wh"
@@ -30,15 +26,20 @@
 				"type": "string",
 				"value": "devdls"
 			},
-			"sf_account": {
+			"new_parameter": {
 				"type": "string",
-				"value": "devaccount"
+				"value": "GlobalOne "
 			},
-			"kv_url": {
+			"secondOne": {
 				"type": "string",
-				"value": "devkv"
+				"value": "1"
 			}
 		}
 	},
-	"location": "eastus"
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9c347c51-e8fb-41d8-ab9f-18de3f53d5c3",
+		"tenantId": "705b750f-6fd9-4bf2-8f12-9104515e76a2"
+	}
 }

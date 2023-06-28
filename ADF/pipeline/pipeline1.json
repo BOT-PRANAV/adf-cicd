@@ -3,15 +3,17 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait4",
+				"name": "Wait3",
 				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 6
+					"waitTimeInSeconds": 1
 				}
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2023-05-15T12:04:04Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }
