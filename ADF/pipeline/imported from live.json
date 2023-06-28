@@ -1,0 +1,19 @@
+{
+	"name": "imported from live",
+	"properties": {
+		"activities": [
+			{
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-06-28T15:12:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
