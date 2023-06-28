@@ -18,10 +18,6 @@
 				"type": "string",
 				"value": "devuser"
 			},
-			"sf_role": {
-				"type": "string",
-				"value": "DevDEngg"
-			},
 			"sf_warehouse": {
 				"type": "string",
 				"value": "dev_wh"
@@ -30,21 +26,13 @@
 				"type": "string",
 				"value": "devdls"
 			},
-			"sf_account": {
-				"type": "string",
-				"value": "devaccount"
-			},
-			"kv_url": {
-				"type": "string",
-				"value": "devkv"
-			},
 			"new_parameter": {
 				"type": "string",
 				"value": "GlobalOne "
 			},
-			"secondOne": {
+			"third one": {
 				"type": "string",
-				"value": "1"
+				"value": "q"
 			}
 		}
 	},
