@@ -70,5 +70,6 @@
 				"type": "Expression"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

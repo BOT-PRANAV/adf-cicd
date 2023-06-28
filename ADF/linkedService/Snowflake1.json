@@ -1,5 +1,6 @@
 {
 	"name": "Snowflake1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"parameters": {
 			"account": {

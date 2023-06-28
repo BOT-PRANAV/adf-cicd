@@ -37,8 +37,21 @@
 			"kv_url": {
 				"type": "string",
 				"value": "devkv"
+			},
+			"new_parameter": {
+				"type": "string",
+				"value": "GlobalOne "
+			},
+			"secondOne": {
+				"type": "string",
+				"value": "1"
 			}
 		}
 	},
-	"location": "eastus"
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9c347c51-e8fb-41d8-ab9f-18de3f53d5c3",
+		"tenantId": "705b750f-6fd9-4bf2-8f12-9104515e76a2"
+	}
 }
